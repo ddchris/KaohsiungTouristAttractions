@@ -1,0 +1,317 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+	background-color:black;
+	color: white;
+}
+
+*,*:after, *:before{
+	box-sizing: border-box;
+}
+
+@media(max-width: 370px){
+	*{
+		font-size: 90%;
+	}
+}
+
+.wrap{
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.header{
+	background-image: url('../imgs/the-urban-landscape-1698285.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 300px;
+	text-align: center;
+	padding: 10% 0 18% 0;
+	position: relative;
+}
+
+
+.header h1{
+	font-size: 2em;
+	font-weight: bold;
+	margin-bottom: 100px;
+}
+
+@media(max-width: 500px){
+	.header h1{
+		margin-bottom: 80px;
+	}
+}
+@media(max-width: 380px){
+	.header h1{
+		font-size: 155%;
+	}
+}
+
+.areaSelector{
+	width: 40%;
+	height: 2.5em;
+}
+
+@media(max-width: 500px){
+	.areaSelector{
+		width: 55%;
+	}
+}
+
+.hotDistrict{
+    position: absolute;
+    top: 78%;
+    left: 15%;
+    width: 70%;
+    height: 100px;
+    background: rgba(220, 220, 220, 0.8);
+    color: #322F2F;
+    padding: 15px 0 5px 0;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+
+}
+
+.hotDistrict >span{
+	font-size: .8em;
+	font-weight: bold;
+    display: block;
+    text-align: -webkit-left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+@media(max-width: 500px){
+	.hotDistrict >span{
+		text-align: center;
+	}
+	.hotDistrict{
+	    height: 140px;
+	}
+}
+.hotDistrict >ul{
+	width: 100%
+}
+
+.hotDistrict >ul >li{
+    width: 23%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 10px;
+    font-size: .8em;
+    font-weight: bold;
+    border-radius: 9px;
+}
+
+.hotDistrict >ul >li:hover{
+    cursor: pointer;
+}
+
+@media(max-width: 500px){
+	.hotDistrict >ul >li{
+	    width: 45%;
+	    margin-left: 3%;
+	    margin-bottom: 1%;
+	}
+}
+
+.district1{
+	background: #8A82CC
+}
+.district2{
+	background: #FFA782;
+}
+.district3{
+	background: #F5D105;
+}
+.district4{
+	background: #559AC8;
+}
+
+.spotList{
+    width: 100%;
+    height: 100px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.spotList >ul{
+	width: 100%;
+}
+
+.spotList >ul >li{
+	float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 46%;
+    height: 300px;
+    font-size: .8em;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+@media(max-width: 650px){
+	.spotList >ul >li{
+	    width: 99%;
+	    height: auto;
+	    margin-left: .5%;
+	    padding: 0 1.5%;
+	}
+}
+
+.spotList li p{
+    padding: 5px 10px;
+    line-height: 1.2;
+
+}
+
+.spotList li p img{
+	margin-right: 10px;
+	width: 16px;
+}
+
+.spotImgsFrame{
+	width: 100%;
+	height: 155px;
+	overflow: hidden;
+	position: relative;
+}
+
+.spotImgsFrame >img{
+    width: 100%;
+    position: absolute;
+    top: -100px;
+}
+
+@media(max-width: 940px){
+	.spotImgsFrame >img {
+		top: -40px;
+	}
+}
+
+@media(max-width: 760px){
+	.spotImgsFrame >img {
+		top: -20px;
+	}
+}
+
+@media(max-width: 650px){
+	.spotImgsFrame{
+		height: 210px;
+	}
+	.spotImgsFrame >img {
+	    width: 70%;
+	    left: 15%;
+	    min-height: 220px;
+	}
+}
+
+#spotName{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 18px;
+}
+
+#spotZone{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 15px;
+}
+
+@media(max-width: 650px){
+	#spotName{
+	    bottom: 1.5em;
+	    left: 100px;
+	    font-size: 18px;
+	}
+
+	#spotZone{
+	    bottom: 1.8em;
+	    right: 120px;
+	    font-size: 15px;
+	}
+}
+
+@media(max-width: 450px){
+	#spotName{
+	    bottom: 1.5em;
+	    left: 70px;
+	    font-size: 15px;
+	}
+
+	#spotZone{
+	    bottom: 1.8em;
+	    right: 90px;
+	    font-size: 12px;
+	}
+}
+
+.spotInformation{
+	padding: 15px;
+	font-size: .8em;
+	font-size: 15px;
+}
+
+.footer{
+	clear: both;
+	margin-top: 10px;
+	width: 100%;
+	padding: 7px 0;
+	text-align: center;
+	line-height: 1.3;
+	font-size: .6em;
+	background: #559AC8;
+	color: #FFFFFF;
+}
+
+.footer h5{
+	color: #FFD366;
+}
