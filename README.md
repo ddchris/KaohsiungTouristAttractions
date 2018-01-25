@@ -1,3 +1,3 @@
 # KaohsiungTouristAttractions
 
-# https://ddchris.github.io/KaohsiungTouristAttractions/
+https://ddchris.github.io/KaohsiungTouristAttractions/
