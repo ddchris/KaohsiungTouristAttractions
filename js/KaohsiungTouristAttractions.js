@@ -15,6 +15,8 @@ xhr.onload = function () {
 	if (xhr.status == 200){
 		jsonData = JSON.parse(xhr.responseText);
 		spotDataLength = jsonData.result.records.length;
+		//頁面初始化
+		getDataAndShow ();
 	};
 };
 
@@ -106,7 +108,5 @@ function getHotZoneData (e) {
 	getDataAndShow();
 };
 
-//頁面初始化
-getDataAndShow ();
 
 
