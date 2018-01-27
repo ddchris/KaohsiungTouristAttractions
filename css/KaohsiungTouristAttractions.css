@@ -127,14 +127,6 @@ body{
     margin-bottom: 10px;
 }
 
-@media(max-width: 500px){
-	.hotDistrict >span{
-		text-align: center;
-	}
-	.hotDistrict{
-	    height: 140px;
-	}
-}
 .hotDistrict >ul{
 	width: 100%
 }
@@ -155,6 +147,12 @@ body{
 }
 
 @media(max-width: 500px){
+	.hotDistrict{
+	    height: 140px;
+	}
+	.hotDistrict >span{
+		text-align: center;
+	}
 	.hotDistrict >ul >li{
 	    width: 45%;
 	    margin-left: 3%;
@@ -168,10 +166,12 @@ body{
 
 .district2{
 	background: #FFA782;
-}
+} 
+
 .district3{
 	background: #F5D105;
 }
+
 .district4{
 	background: #559AC8;
 }
@@ -210,17 +210,6 @@ body{
     box-shadow: 3px 3px 6px #A99898;
 }
 
-
-
-@media(max-width: 650px){
-	.spotList >ul >li{
-	    width: 99%;
-	    height: auto;
-	    margin-left: .5%;
-	    padding: 0 1.5%;
-	}
-}
-
 .spotList li p{
     padding: 5px 10px;
     line-height: 1.2;
@@ -230,6 +219,15 @@ body{
 .spotList li p img{
 	margin-right: 10px;
 	width: 16px;
+}
+
+@media(max-width: 650px){
+	.spotList >ul >li{
+	    width: 99%;
+	    height: auto;
+	    margin-left: .5%;
+	    padding: 0 1.5%;
+	}
 }
 
 .spotImgsFrame{
@@ -330,4 +328,19 @@ body{
 
 .footer h5{
 	color: #FFD366;
+}
+
+#goTop{
+	position: fixed;
+    z-index: 2;
+    bottom: 75px;
+    right: 1px;
+}
+
+#message{
+    position: absolute;
+    left: 36%;
+    top: -50%;
+    font-size: 50px;
+    font-family: cursive;
 }
