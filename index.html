@@ -10,6 +10,7 @@
 			color: white;
 		}
 	</style>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="css/KaohsiungTouristAttractions.css">
 </head>
 <body>
@@ -57,8 +58,11 @@
 				</ul>
 			</div>
 		</div>
-		<p id="message"></p>
+		<div class="mapFrame">
+			<div id="map"></div>
+		</div>
 		<div class="spotList">
+			<p id="message"></p>
 			<ul id="spotList">
 				<!-- 待加入檔案 -->
 			</ul>
@@ -72,5 +76,7 @@
 	<a href="#areaSelector" id="goTop">
 		<img src="imgs/btn_goTop.png" alt="">
 	</a>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8qcvC0KZYpvsLYGeK6Ks7rpJumVG0BrY&callback=buildMap"
+    async defer></script>
 	<script type="text/javascript" src="js/KaohsiungTouristAttractions.js"></script>
 </html>

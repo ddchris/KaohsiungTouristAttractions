@@ -6,6 +6,8 @@ var strData = '';
 var zone ='全部區域';
 var noData = true;
 var hotZone = false;
+// Google Map
+var map;
 
 // 用 Ajax 取得 JSON 資料
 var xhr = new XMLHttpRequest();
@@ -16,7 +18,7 @@ xhr.onload = function () {
 		jsonData = JSON.parse(xhr.responseText);
 		spotDataLength = jsonData.result.records.length;
 		//頁面初始化
-		getDataAndShow ();
+		getDataAndShow();
 	};
 };
 
@@ -32,6 +34,8 @@ el_hotDistrict.addEventListener('click', getHotZoneData, false);
 
 // 相關函數
 function getDataAndShow (e) {
+
+	buildMap();
 	// 經由選擇區域進入函數則取得所選區域名稱
 	if( e && !hotZone){ zone = e.target.value; };
 
@@ -64,9 +68,18 @@ function getOneZoneData () {
 				ticketinfo = jsonData.result.records[i].Ticketinfo;
 				picture    = jsonData.result.records[i].Picture1;
 				putDataOnPage(i, name, opentime, add, tel, ticketinfo, picture);
+
+				// Google map
+				var str = {};
+				var place = {};
+				place.lng = parseFloat(jsonData.result.records[i].Px);
+				place.lat = parseFloat(jsonData.result.records[i].Py);
+				str.map = map;
+				str.title = jsonData.result.records[i].Name;
+				str.position = place;
+				new google.maps.Marker(str);
 		}
 	}
-
 	if (noData){el_message.textContent ='查無資料';};
 	noData = true;
 };
@@ -108,5 +121,9 @@ function getHotZoneData (e) {
 	getDataAndShow();
 };
 
-
-
+function buildMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 22.654423, lng: 120.385375},
+        zoom: 11,
+		});
+};
