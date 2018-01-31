@@ -190,6 +190,12 @@ body{
     margin-bottom: 50px;
 }
 
+@media(max-width: 550px){
+	.mapFrame{
+	    margin-top: 110px;
+	}
+}
+
 .mapFrame #map{
 margin: 0 auto;
     width: 45%;

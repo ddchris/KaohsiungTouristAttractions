@@ -138,9 +138,9 @@ function buildMap () {
 	}
 }
 
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 22.654423, lng: 120.385375},
-        zoom: 11,
-		});
-};
+// function initMap() {
+//     map = new google.maps.Map(document.getElementById('map'), {
+//         center: {lat: 22.654423, lng: 120.385375},
+//         zoom: 11,
+// 		});
+// };
