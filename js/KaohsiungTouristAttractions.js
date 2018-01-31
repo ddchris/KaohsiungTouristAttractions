@@ -35,10 +35,8 @@ el_hotDistrict.addEventListener('click', getHotZoneData, false);
 // 相關函數
 function getDataAndShow (e) {
 
-	buildMap();
 	// 經由選擇區域進入函數則取得所選區域名稱
 	if( e && !hotZone){ zone = e.target.value; };
-
 	if (zone === '全部區域'){ getAllZoneData(); }
 	else { getOneZoneData(); };
 
@@ -50,6 +48,8 @@ function getDataAndShow (e) {
 };
 
 function getOneZoneData () {
+
+	buildMap ();
 	var name;
 	var opentime;
 	var add;
@@ -59,7 +59,6 @@ function getOneZoneData () {
 
 	for (var i = 0; i < spotDataLength; i++) {
 		if (jsonData.result.records[i].Zone == zone ){
-				noData = false;
 				el_message.textContent ='';
 				name       = jsonData.result.records[i].Name;
 				opentime   = jsonData.result.records[i].Opentime;
@@ -69,7 +68,7 @@ function getOneZoneData () {
 				picture    = jsonData.result.records[i].Picture1;
 				putDataOnPage(i, name, opentime, add, tel, ticketinfo, picture);
 
-				// Google map
+				// set Map markers
 				var str = {};
 				var place = {};
 				place.lng = parseFloat(jsonData.result.records[i].Px);
@@ -80,11 +79,13 @@ function getOneZoneData () {
 				new google.maps.Marker(str);
 		}
 	}
-	if (noData){el_message.textContent ='查無資料';};
+	if (noData){el_message.textContent ='查無資料'; initMap();};
 	noData = true;
 };
 
 function getAllZoneData () {
+
+	initMap();
 	var name;
 	var opentime;
 	var add;
@@ -121,7 +122,23 @@ function getHotZoneData (e) {
 	getDataAndShow();
 };
 
-function buildMap() {
+function buildMap () {
+	for (var i = 0; i < spotDataLength; i++) {
+		if (jsonData.result.records[i].Zone == zone ){
+			noData = false;
+			str = {};
+			var center = {};
+			center.lng = parseFloat(jsonData.result.records[i].Px);
+			center.lat = parseFloat(jsonData.result.records[i].Py);
+			str.center = center;
+			str.zoom = 12;
+			map = new google.maps.Map(document.getElementById('map'), str);
+			return 0;
+		}
+	}
+}
+
+function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 22.654423, lng: 120.385375},
         zoom: 11,
